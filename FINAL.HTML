@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A Maven Brisk Resonate - Your creative partner for digital transformation, content creation, and brand development.">
+  <title>A Maven Brisk Resonate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #e74c3c;
+      --accent: #3498db;
+      --bg-light: #f5f6fa;
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: var(--bg-light);
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .header {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      align-items: center;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 30px;
+    }
+
+    .header img {
+      height: 110px;
+      width: 110px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: var(--bg-light);
+      padding: 12px;
+    }
+
+    .header-text h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .header-text p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-top: 8px;
+      max-width: 600px;
+    }
+
+    .services {
+      margin-top: 50px;
+    }
+
+    .services h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--secondary);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background: #fafafa;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #e0e0e0;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      font-size: 1.8rem;
+      color: var(--secondary);
+      margin-bottom: 12px;
+    }
+
+    .service-card h3 {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+
+    .service-card ul {
+      padding-left: 18px;
+      margin: 0;
+      color: #555;
+    }
+
+    .service-card ul li {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .contact-us {
+      margin-top: 50px;
+      background-color: var(--secondary);
+      color: white;
+      padding: 16px;
+      border: none;
+      width: 100%;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .contact-us:hover {
+      background-color: #c0392b;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: #fff;
+      border-radius: 15px;
+      padding: 35px 25px;
+      max-width: 450px;
+      width: 90%;
+      text-align: center;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .modal-content h3 {
+      margin-bottom: 25px;
+    }
+
+    .contact-option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 10px 0;
+      padding: 12px;
+      background-color: var(--bg-light);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .contact-option:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .contact-option i {
+      font-size: 1.2rem;
+    }
+
+    .close-btn {
+      margin-top: 20px;
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 25px;
+      }
+
+      .header-text h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <img src="logo.jpg" alt="Company Logo">
+    <div class="header-text">
+      <h1>A MAVEN BRISK RESONATE</h1>
+      <p>Empowering brands with creative and digital brilliance. From content to campaigns — we do it all.</p>
+    </div>
+  </div>
+
+  <div class="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h3>Accounting Services</h3>
+        <ul>
+          <li>Complete bookkeeping</li>
+          <li>Account maintenance</li>
+          <li>Financial statements & reports</li>
+          <li>Tax filing support</li>
+          <li>Payroll processing</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-receipt"></i></div>
+        <h3>Taxation Services</h3>
+        <ul>
+          <li>ITR, GST & TDS Return Filing</li>
+          <li>Corporate Tax Filing</li>
+          <li>Tax Planning & Advisory</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-building"></i></div>
+        <h3>Office Setup Documentation</h3>
+        <ul>
+          <li>Company Incorporation & BRN</li>
+          <li>GST, Udhyam Registration</li>
+          <li>Legal Drafting & Compliance</li>
+          <li>*T&C Apply</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-users-cog"></i></div>
+        <h3>Office Staff Provision</h3>
+        <ul>
+          <li>Clerks & Office Assistants</li>
+          <li>Receptionists & Sales Execs</li>
+          <li>HR, IT, Data Entry & Security</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-university"></i></div>
+        <h3>Banking Services (SBI Only)</h3>
+        <ul>
+          <li>New Account Opening</li>
+          <li>Loan/OD Help & Credit Cards</li>
+          <li>Online Banking Assistance</li>
+          <li>*T&C for other banks</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+        <h3>Business Consulting & Compliance</h3>
+        <ul>
+          <li>Strategy & Investment Planning</li>
+          <li>ROC Filings & Advisory</li>
+          <li>Compliance & Secretarial Help</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+        <h3>Branding & Digital Media</h3>
+        <ul>
+          <li>Social Media Management</li>
+          <li>Models, Shoots & Editing</li>
+          <li>Logos, Graphics & Content</li>
+          <li>Professional Photography</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-ad"></i></div>
+        <h3>Advertising & Content</h3>
+        <ul>
+          <li>Meta Ads Setup</li>
+          <li>Content Planning & Management</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <button class="contact-us" onclick="openModal()">Contact Us</button>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="contactModal">
+  <div class="modal-content">
+    <h3>Connect with Us</h3>
+    <a href="https://wa.me/918888628620" target="_blank" class="contact-option">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="mailto:amavenbriskresonate@hmail.com" target="_blank" class="contact-option">
+      <i class="fas fa-envelope"></i> Email
+    </a>
+    <a href="tel:+918888628620" class="contact-option">
+      <i class="fas fa-phone"></i> Call
+    </a>
+    <a href="https://www.instagram.com/amavenbrikresonate/profilecard/?igsh=MXJtYmt0dDB3MHI2NQ==" target="_blank" class="contact-option">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://maps.app.goo.gl/BALbLhEYmbqugLFn9?g_st=com.google.maps.preview.copy" target="_blank" class="contact-option">
+      <i class="fas fa-map-marker-alt"></i> Google Maps
+    </a>
+    <button class="close-btn" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+  function openModal() {
+    document.getElementById('contactModal').style.display = 'flex';
+  }
+  function closeModal() {
+    document.getElementById('contactModal').style.display = 'none';
+  }
+  window.onclick = function(e) {
+    const modal = document.getElementById('contactModal');
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  };
+</script>
+
+</body>
+</html>
